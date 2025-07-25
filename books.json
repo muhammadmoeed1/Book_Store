@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "title": "Moth Smoke",
+    "author": "Mohsin Hamid",
+    "createdAt": "2025-07-20T10:00:00.000Z"
+  },
+  {
+    "id": "2",
+    "title": "The Reluctant Fundamentalist",
+    "author": "Mohsin Hamid",
+    "createdAt": "2025-07-21T11:30:00.000Z"
+  },
+  {
+    "id": "3",
+    "title": "The Wandering Falcon",
+    "author": "Jamil Ahmad",
+    "createdAt": "2025-07-22T09:15:00.000Z"
+  },
+  {
+    "id": "4",
+    "title": "In Other Rooms, Other Wonders",
+    "author": "Daniyal Mueenuddin",
+    "createdAt": "2025-07-22T14:45:00.000Z"
+  }
+]

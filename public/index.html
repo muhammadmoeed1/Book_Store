@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pakistani Book Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <h1>Pakistani Book Store</h1>
+            </div>
+            <p class="tagline">Celebrating Pakistani Literature</p>
+        </header>
+
+        <main>
+            <section class="book-form-section">
+                <h2><i class="fas fa-plus-circle"></i> Add New Book</h2>
+                <form id="addBookForm" class="book-form">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" id="title" name="title" placeholder="Enter book title" required minlength="2">
+                        <small class="error-message" id="titleError"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="author">Author</label>
+                        <input type="text" id="author" name="author" placeholder="Enter author name" required minlength="2">
+                        <small class="error-message" id="authorError"></small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Add Book
+                    </button>
+                </form>
+            </section>
+
+            <section class="book-list-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-books"></i> Your Books</h2>
+                    <div class="book-count" id="bookCount">0 books</div>
+                </div>
+                
+                <div id="booksContainer">
+                    <div class="loading" id="loadingIndicator">
+                        <i class="fas fa-spinner fa-spin"></i> Loading books...
+                    </div>
+                    <div class="empty-state" id="emptyState" style="display: none;">
+                        <i class="fas fa-book-open"></i>
+                        <p>Your library is empty</p>
+                        <p class="subtext">Add your first book to get started!</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Book Detail Modal -->
+        <div id="bookModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="modal-header">
+                    <h3 id="modalBookTitle">Book Title</h3>
+                    <p class="author" id="modalBookAuthor">By Author</p>
+                </div>
+                <div class="modal-body">
+                    <div class="book-cover">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    
+                    <div class="book-meta-grid">
+                        <div class="meta-card">
+                            <h4>Book ID</h4>
+                            <p id="modalBookId">N/A</p>
+                        </div>
+                        <div class="meta-card">
+                            <h4>Added On</h4>
+                            <p id="modalBookDate">N/A</p>
+                        </div>
+                        <div class="meta-card">
+                            <h4>Status</h4>
+                            <p>Available</p>
+                        </div>
+                    </div>
+                    
+                    <div class="book-description">
+                        <p id="modalBookDescription">This book is part of your Pakistani book collection.</p>
+                    </div>
+                    
+                    <div class="book-actions-modal">
+                        <button class="btn btn-danger" id="modalDeleteBtn">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button class="btn btn-secondary close-modal-btn">
+                            <i class="fas fa-times"></i> Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notification Toast -->
+        <div id="toast" class="toast">
+            <div class="toast-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="toast-content">
+                <p class="toast-message">Notification message</p>
+            </div>
+            <div class="toast-progress"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
